@@ -15,7 +15,9 @@ import javax.persistence.*;
 public class Email {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE
+    )
     private Long emailTransactionNo;
     private String fromEmailId;
     private String toEmailId;

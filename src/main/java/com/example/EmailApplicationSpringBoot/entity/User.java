@@ -12,9 +12,14 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(
+        name = "User_table"
+)
 public class User {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE
+    )
     private Long userId;
     private String firstName;
     private String lastName;
