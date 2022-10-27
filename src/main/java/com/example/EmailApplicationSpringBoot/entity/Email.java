@@ -12,12 +12,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
+public class Email {
+
     @Id
     @GeneratedValue()
-    private Long userId;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phoneNo;
+    private Long emailTransactionNo;
+    private String fromEmailId;
+    private String toEmailId;
+    private String subject;
+    private String body;
 }
