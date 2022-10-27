@@ -23,6 +23,9 @@ public class User {
     private Long userId;
     private String firstName;
     private String lastName;
+    @Column(
+            nullable = false
+    )
     private String email;
     private String phoneNo;
 }
