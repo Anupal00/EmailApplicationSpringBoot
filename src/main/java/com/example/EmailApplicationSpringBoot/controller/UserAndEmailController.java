@@ -1,5 +1,6 @@
 package com.example.EmailApplicationSpringBoot.controller;
 
+import com.example.EmailApplicationSpringBoot.entity.Email;
 import com.example.EmailApplicationSpringBoot.entity.User;
 import com.example.EmailApplicationSpringBoot.service.EmailService;
 import com.example.EmailApplicationSpringBoot.service.UserService;
@@ -32,5 +33,15 @@ public class UserAndEmailController {
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable(name = "id") Long userId){
         return userService.getUserById(userId);
+    }
+
+    @PostMapping("/email")
+    public String sendEmail(@RequestBody Email email){
+        return emailService.sendEmail(email);
+    }
+
+    @GetMapping("/emails/count")
+    public Long countEmail(@RequestParam String user){
+        return emailService.countEmail(user);
     }
 }
